@@ -2,7 +2,7 @@ from fastapi import FastAPI
 from pydantic import BaseModel
 from typing import Optional
 
-from affine.Affine import executeFact, encrypt_text, decrypt_text, qualify_msg, get_force_keys, build_decrypt_text, \
+from app.affine.Affine import executeFact, encrypt_text, get_force_keys, build_decrypt_text, \
     normalize_msg, build_decrypt_text_with_keys, force_decrypt
 
 app = FastAPI()
