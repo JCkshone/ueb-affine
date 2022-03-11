@@ -15,7 +15,7 @@ En la siguiente API rest se encuentra un metodo post expuesto que permite cifrar
 ```
 5. finalmente ingrese al siguiente [Link](http://localhost/docs)  
 
-## usar api desplegada
+## Como usar la solucion
 
 1. Para cifrar con clave se requiere enviar el siguiente objeto json en el request
 ```
