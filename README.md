@@ -2,6 +2,21 @@
 
 En la siguiente API rest se encuentra un metodo post expuesto que permite cifrar, descifrar(con llaves, o por analisis estadistico), el api se encuentra expuesta en el siguiente [Link](https://cryptrestapi.herokuapp.com/docs)  
 
+## Para Compilar la solucion local
+1. Clone el repositorio e instale Docker
+2. Inicie una terminal en el path de la carpeta con el codigo
+3. ejecute el siguiente comanto para crear una imagen
+```
+  docker build -t affine .
+```
+4. cree un contenedor con el volumen creado
+```
+  docker run -d --name affinecontainer -p 80:80 affine
+```
+5. finalmente ingrese al siguiente [Link](http://localhost/docs)  
+
+## usar api desplegada
+
 1. Para cifrar con clave se requiere enviar el siguiente objeto json en el request
 ```
 {
