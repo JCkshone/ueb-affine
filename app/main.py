@@ -36,7 +36,7 @@ async def root(request: RequestModel):
     elif request.plain_text is not None:
         plain_msg = normalize_msg(msg=request.plain_text)
 
-    # valid_keys = executeFact(1, 10)
+    valid_keys = executeFact(1, 10)
     # if not valid_keys:
     #   return {"error": "invalid keys"}
 

@@ -94,14 +94,17 @@ def executeFact(a: int, b: int) -> bool:
 
     print("equal items", equals_items)
 
-    # Checar cuáles números del 1 al 26 son coprimos
-    probables = []
-    for i in range(a, b + 1):
-        if math.gcd(i, b) == 1:
-            probables.append(i)
-    print("Números que se pueden usar: ", probables)
-
     return len(equals_items) == 1
+
+
+def det_available_nums() -> [int]:
+    # Checar cuáles números del 1 al 26 son coprimos
+    nums = []
+    for i in range(1, 27):
+        if math.gcd(i, 27) == 1:
+            nums.append(i)
+    print("Números que se pueden usar: ", nums)
+    return nums
 
 
 def get_force_keys(msg: str) -> (int, int):
@@ -116,9 +119,18 @@ def get_force_keys(msg: str) -> (int, int):
 
 def force_decrypt(msg: str) -> [str]:
     results: [str] = []
+    values = det_available_nums()
     for a in alphaWithValue:
         for b in alphaWithValue:
             dec_msg = decrypt_text(msg, alphaWithValue[a], alphaWithValue[b])
+            if len(dec_msg) > 0:
+                results.append(dec_msg)
+
+    results = []
+
+    for a in values:
+        for b in values:
+            dec_msg = decrypt_text(msg, a, b)
             if len(dec_msg) > 0:
                 results.append(dec_msg)
     return results
